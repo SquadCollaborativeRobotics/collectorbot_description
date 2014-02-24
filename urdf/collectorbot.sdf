@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<sdf version='1.4'>
+<sdf version='1.4'>  
   <model name="Collection_bot">
     <static>false</static>
 
@@ -190,8 +190,9 @@
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>base_link</robotBaseFrame>
+      <robotBaseFrame>robot_center</robotBaseFrame>
     </plugin>
 
   </model>
+
 </sdf>
