@@ -38,6 +38,29 @@
         </material>
       </visual>
 
+      <collision name="trash_can">
+        <pose>-0.114 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.3556 0.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="trash_visual">
+        <pose>-0.114 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.2 .3556 .2</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+
       <collision name="caster_collision">
         <pose>-0.154 0 -0.06905 0 0 0</pose>
         <geometry>
