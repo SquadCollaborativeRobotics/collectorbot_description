@@ -54,7 +54,7 @@
 
         <plugin name="laser" filename="libgazebo_ros_laser.so">
           <frameName>hokuyo_frame</frameName>
-          <topicName>/scan</topicName>
+          <topicName>scan</topicName>
         </plugin>
         <always_on>1</always_on>
         <update_rate>30</update_rate>

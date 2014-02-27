@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<sdf version='1.4'>
+<sdf version='1.4'>  
   <model name="Collection_bot">
     <static>false</static>
 
@@ -251,4 +251,5 @@
     </plugin>
 
   </model>
+
 </sdf>
