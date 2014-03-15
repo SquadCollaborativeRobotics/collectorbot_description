@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.69.0 r60991</authoring_tool>
     </contributor>
-    <created>2014-03-15T12:04:05</created>
-    <modified>2014-03-15T12:04:05</modified>
+    <created>2014-03-15T12:06:19</created>
+    <modified>2014-03-15T12:06:19</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -214,7 +214,7 @@
         <instance_light url="#Lamp-light"/>
       </node>
       <node id="Cube" name="Cube" type="NODE">
-        <matrix sid="transform">0.01666666 0 0 0 0 0.1850822 0 0 0 0 0.1852646 0 0 0 0 1</matrix>
+        <matrix sid="transform">0.01666666 0 0 0 0 0.1850822 0 0 0 0 0.1346053 0 0 0 0 1</matrix>
         <instance_geometry url="#Cube-mesh">
           <bind_material>
             <technique_common>
