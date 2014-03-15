@@ -3,10 +3,10 @@
   <asset>
     <contributor>
       <author>Blender User</author>
-      <authoring_tool>Blender 2.69.0 r60995</authoring_tool>
+      <authoring_tool>Blender 2.69.0 r60991</authoring_tool>
     </contributor>
-    <created>2014-03-15T14:50:27</created>
-    <modified>2014-03-15T14:50:27</modified>
+    <created>2014-03-15T12:04:05</created>
+    <modified>2014-03-15T12:04:05</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -160,7 +160,7 @@
     <geometry id="Cube-mesh" name="Cube">
       <mesh>
         <source id="Cube-mesh-positions">
-          <float_array id="Cube-mesh-positions-array" count="24">0.5000001 0.8 -1.1 0.5000001 -0.8 -1.1 -0.5000002 -0.7999998 -1.1 -0.4999999 0.8000003 -1.1 0.5000004 0.7999996 1.1 0.4999998 -0.8000004 1.1 -0.5000002 -0.7999997 1.1 -0.5000001 0.8000001 1.1</float_array>
+          <float_array id="Cube-mesh-positions-array" count="24">0.02999997 0.5484048 -0.7540566 0.02999997 -0.5484048 -0.7540566 -0.02999997 -0.5484047 -0.7540566 -0.02999997 0.548405 -0.7540566 0.03000003 0.5484045 0.7540566 0.02999997 -0.5484051 0.7540566 -0.02999997 -0.5484046 0.7540566 -0.02999997 0.5484048 0.7540566</float_array>
           <technique_common>
             <accessor source="#Cube-mesh-positions-array" count="8" stride="3">
               <param name="X" type="float"/>
@@ -170,7 +170,7 @@
           </technique_common>
         </source>
         <source id="Cube-mesh-normals">
-          <float_array id="Cube-mesh-normals-array" count="36">0 0 -1 0 0 1 1 0 0 0 -1 -2.16744e-7 -1 1.86265e-7 0 4.76837e-7 1 1.62558e-7 0 0 -1 0 0 1 1 -3.35276e-7 1.35465e-7 -7.15256e-7 -1 0 -1 0 0 3.57628e-7 1 0</float_array>
+          <float_array id="Cube-mesh-normals-array" count="36">0 0 -1 0 0 1 1 0 0 -9.9341e-7 -1 -2.37136e-7 -1 0 0 4.96705e-6 1 1.58091e-7 0 0 -1 0 0 1 1 0 0 -8.9407e-6 -1 0 -1 0 0 3.97364e-6 1 0</float_array>
           <technique_common>
             <accessor source="#Cube-mesh-normals-array" count="12" stride="3">
               <param name="X" type="float"/>
@@ -207,29 +207,14 @@
     <visual_scene id="Scene" name="Scene">
       <node id="Camera" name="Camera" type="NODE">
         <matrix sid="transform">0.6858805 -0.3173701 0.6548619 7.481132 0.7276338 0.3124686 -0.6106656 -6.50764 -0.01081678 0.8953432 0.4452454 5.343665 0 0 0 1</matrix>
-        <translate sid="location">7.481132 -6.50764 5.343665</translate>
-        <rotate sid="rotationZ">0 0 1 46.69194</rotate>
-        <rotate sid="rotationY">0 1 0 0.619768</rotate>
-        <rotate sid="rotationX">1 0 0 63.5593</rotate>
-        <scale sid="scale">1 0.9999999 1</scale>
         <instance_camera url="#Camera-camera"/>
       </node>
       <node id="Lamp" name="Lamp" type="NODE">
         <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
-        <translate sid="location">4.076245 1.005454 5.903862</translate>
-        <rotate sid="rotationZ">0 0 1 106.9363</rotate>
-        <rotate sid="rotationY">0 1 0 3.163707</rotate>
-        <rotate sid="rotationX">1 0 0 37.26105</rotate>
-        <scale sid="scale">1 0.9999999 1</scale>
         <instance_light url="#Lamp-light"/>
       </node>
       <node id="Cube" name="Cube" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
-        <translate sid="location">0 0 0</translate>
-        <rotate sid="rotationZ">0 0 1 0</rotate>
-        <rotate sid="rotationY">0 1 0 0</rotate>
-        <rotate sid="rotationX">1 0 0 0</rotate>
-        <scale sid="scale">1 1 1</scale>
+        <matrix sid="transform">0.01666666 0 0 0 0 0.1850822 0 0 0 0 0.1852646 0 0 0 0 1</matrix>
         <instance_geometry url="#Cube-mesh">
           <bind_material>
             <technique_common>
