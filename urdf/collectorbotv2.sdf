@@ -94,7 +94,7 @@
         </material>
       </visual>
     </link>
-    
+
     <link name="left_wheel_link">
       <pose>0.1413 -0.1778 0.0619125 1.57079632679 0 0</pose>
       <inertial>
@@ -247,6 +247,95 @@
       </sensor>
     </link>
 
+    <joint name="camera_joint" type="revolute">
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+      <!-- <origin><xyz>0.1 0 0.2></xyz><rpy>0 0 0</rpy></origin> -->
+      <parent>base_link</parent>
+      <child>camera_link</child>
+    </joint>
+
+    <!-- Camera -->
+    <link name="camera_link">
+      <collision name="collision-camera">
+        <!-- <pose>0 0 0.4 0 0 0</pose> -->
+        <pose>0.25 0 .25 0 0 0</pose>
+
+        <geometry>
+          <box><size>.1 .1 0.1</size></box>
+        </geometry>
+      </collision>
+
+      <visual name="visual-camera">
+        <!-- <pose>0 0 0.4 0 0 0</pose> -->
+
+        <pose>0.25 0 .25 0 0 0</pose>
+        <!-- <origin><xyz>0 0 0</xyz><rpy>0 0 0</rpy></origin> -->
+        <geometry>
+          <box><size>.1 .1 0.1</size></box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+
+      <inertial>
+        <mass>1e-5</mass>
+        <!-- <origin><xyz>0 0 0</xyz><rpy>0 0 0</rpy></origin> -->
+        <inertia>
+          <ixx>1e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-6</iyy>
+          <iyz>0</iyz>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
+
+      <sensor type="camera" name="camera1">
+        <update_rate>30.0</update_rate>
+        <camera name="head">
+          <horizontal_fov>1.3962634</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>rrbot/camera1</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+    </link>
+
     <joint name="hokuyo_joint" type="revolute">
       <child>hokuyo_link</child>
       <parent>base_link</parent>
@@ -259,7 +348,7 @@
       </axis>
     </joint>
 
-  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <alwaysOn>true</alwaysOn>
       <updateRate>20</updateRate>
       <leftJoint>base_left_wheel</leftJoint>
